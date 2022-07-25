@@ -24,7 +24,7 @@ function createFile(filename, fileData) {
 }
 
 function readFile(filename){
-    const res = fs.readFileSync(path.join("root",filename), 'utf8');  //sync or without sync will need a callback func - 
+    const res = fs.readFileSync(path.join(filename), 'utf8');  //sync or without sync will need a callback func - 
     return res;
 }
 
@@ -34,9 +34,15 @@ function updateFile(filename, fileData){
 }
 
 function deleteFile(filename){
-    const res = fs.unlinkSync(path.join("root",filename))
+    const res = fs.unlinkSync(path.join(filename))
     return res;
 }
 
-module.exports = {readFolder, createFolder, saveFile, createFile, readFile, updateFile, deleteFile }
+function renameFile(filename, newFilename){
+    // fs.renameSync("root/name.json", "root/newName.json");
+    const res = fs.renameSync(path.join(filename), path.join(newFilename));
+    return res;
+}
+
+module.exports = {readFolder, createFolder, saveFile, createFile, readFile, updateFile, deleteFile, renameFile }
 

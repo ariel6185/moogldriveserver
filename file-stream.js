@@ -16,13 +16,13 @@ fs.mkdirSync("root")
 // fs.appendFileSync("root/name.txt", "\nadd more data to the file")
 
 //read file
-// const text = fs.readFileSync("root/name.txt", {encoding: "utf8"})
-// const x = require('./root/name.json') 
-// console.log(text,x);
+const text = fs.readFileSync("root/name.txt", {encoding: "utf8"})
+const x = require('./root/name.json') 
+console.log(text,x);
 
 //read files in the directory - as an array of file names
-const files = fs.readdirSync("root/folder1",{withFileTypes:true});
-console.log(files);
+// const files = fs.readdirSync("root/folder1",{withFileTypes:true});
+// console.log(files);
 
 //delete file
 // files.forEach(file=>fs.unlinkSync(`root/${file}`));
